@@ -9,7 +9,7 @@ public class SubmarineControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
 	}
 	
 	// Update is called once per frame
