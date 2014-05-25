@@ -22,7 +22,7 @@ public class SubmarineControl : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.Mouse0))
 			constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
 
-		if (gameObject.transform.position.x >= destination){
+		if (gameObject.transform.position.x >= destination && endGame == false){
 			destination += 10;
 			score ++;
 		}
