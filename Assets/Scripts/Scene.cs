@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Scene : MonoBehaviour {
 	public GameObject mine;
-	private int mineDistance = 10;
+	private static int mineDistance = 10;
 	private float nextMineCoordinate = 10.0f;
 
 	// Use this for initialization
@@ -27,4 +27,9 @@ public class Scene : MonoBehaviour {
 		Instantiate(mine, upPosition, transform.rotation);
 		Instantiate(mine, downPosition, transform.rotation);
 	}
+
+	public static int GetMineDistance() {
+		return mineDistance;
+	}
+
 }

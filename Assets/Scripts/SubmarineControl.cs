@@ -4,7 +4,6 @@ using System.Collections;
 public class SubmarineControl : MonoBehaviour {
 	private int horizontalSpeed = 1;
 	private int verticalSpeedMax = 30;
-	private int verticalSpeedNormal = 0;
 	private bool endGame = false;
 	private float destination = 30f;
 	public int score;
@@ -23,7 +22,7 @@ public class SubmarineControl : MonoBehaviour {
 			constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
 
 		if (gameObject.transform.position.x >= destination && endGame == false){
-			destination += 10;
+			destination += Scene.GetMineDistance();
 			score ++;
 		}
 	}
