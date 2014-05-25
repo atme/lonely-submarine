@@ -6,7 +6,7 @@ public class SubmarineControl : MonoBehaviour {
 	private int verticalSpeedMax = 30;
 	private bool endGame = false;
 	private float destination = 30f;
-	public int score;
+	private int score;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,7 @@ public class SubmarineControl : MonoBehaviour {
 
 		if (gameObject.transform.position.x >= destination && endGame == false){
 			destination += Scene.GetMineDistance();
-			score ++;
+			score++;
 		}
 	}
 
@@ -44,6 +44,7 @@ public class SubmarineControl : MonoBehaviour {
 		Rect windowRect = new Rect(200, 200, 120, 60);
 		if (endGame)
 			windowRect = GUI.Window(0, centerRectangle(windowRect), RestartGame, "Score:" + score);
+		GUI.Label(new Rect (Screen.width - 100,0,100,50), "<color='black'>Your score: " + score + "</color>");
 	}
 
 	void RestartGame(int windowID) {
