@@ -6,6 +6,8 @@ public class SubmarineControl : MonoBehaviour {
 	private int verticalSpeedMax = 30;
 	private int verticalSpeedNormal = 0;
 	private bool endGame = false;
+	private float destination = 30f;
+	public int score;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +21,11 @@ public class SubmarineControl : MonoBehaviour {
 		
 		if (Input.GetKeyUp (KeyCode.Mouse0))
 			constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
+
+		if (gameObject.transform.position.x >= destination){
+			destination += 10;
+			score ++;
+		}
 	}
 
 	void OnCollisionEnter(Collision collision) {
@@ -37,7 +44,7 @@ public class SubmarineControl : MonoBehaviour {
 	void OnGUI() {
 		Rect windowRect = new Rect(200, 200, 120, 60);
 		if (endGame)
-			windowRect = GUI.Window(0, centerRectangle(windowRect), RestartGame, "End Game");
+			windowRect = GUI.Window(0, centerRectangle(windowRect), RestartGame, "Score:" + score);
 	}
 
 	void RestartGame(int windowID) {
