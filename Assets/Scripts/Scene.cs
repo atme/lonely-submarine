@@ -4,7 +4,10 @@ using System.Collections;
 public class Scene : MonoBehaviour {
 	public GameObject mine;
 	private static int mineDistance = 10;
+	private static int mineDistancefloor = 15;
+	private float nextfloorCoordinate = 5.0f;
 	private float nextMineCoordinate = 10.0f;
+	public GameObject floorwithgrass;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +19,15 @@ public class Scene : MonoBehaviour {
 			CreateMine ();
 			nextMineCoordinate += mineDistance;
 		}
+		if(rigidbody.position.x > nextfloorCoordinate){
+			CreateFloor();
+			nextfloorCoordinate += mineDistancefloor;
+		}
 	}
+
+	void CreateFloor() {
+		Instantiate (floorwithgrass, new Vector2 (transform.position.x + 20.0f, -5.5f), transform.rotation);
+		}
 
 	void CreateMine() {
 		float upMinePosition = Random.Range (3.0f, 1.0f);
