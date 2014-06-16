@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Mine : MonoBehaviour {
 	private GameObject mainCamera;
-	private int destroyDistance = -20;
+	private int destroyDistance = -15;
+	private float speed = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,5 +15,6 @@ public class Mine : MonoBehaviour {
 	void Update () {
 		if (transform.position.x - mainCamera.transform.position.x < destroyDistance)
 			Destroy (this.gameObject);
+		transform.position = new Vector2 (transform.position.x - speed, transform.position.y);
 	}
 }

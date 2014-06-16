@@ -2,26 +2,25 @@
 using System.Collections;
 
 public class SubmarineControl : MonoBehaviour {
-	private int horizontalSpeed = 1;
-	private int verticalSpeedMax = 30;
+	private float verticalSpeed = 0.1f;
 	private bool endGame = false;
 	private float destination = 30f;
 	private int score;
 
 	// Use this for initialization
 	void Start () {
-		constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Mouse0) && !endGame)
-			constantForce.force = new Vector2(horizontalSpeed, verticalSpeedMax);
-		
-		if (Input.GetKeyUp (KeyCode.Mouse0))
-			constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
+		if (Input.GetKey (KeyCode.Mouse0) && !endGame) {
+			transform.position = new Vector2 (transform.position.x, transform.position.y + verticalSpeed);
+		} else {
+			transform.position = new Vector2 (transform.position.x, transform.position.y - verticalSpeed);
+		}
 
-		if (gameObject.transform.position.x >= destination && endGame == false){
+		if (gameObject.transform.position.x >= destination && !endGame) {
 			destination += Scene.GetMineDistance();
 			score++;
 		}
