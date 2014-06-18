@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SubmarineControl : MonoBehaviour {
 	private float verticalSpeed = 0.1f;
-	private bool endGame = false;
+	public bool endGame = false;
 	private float destination = 30f;
 	private int score;
 
@@ -15,9 +15,11 @@ public class SubmarineControl : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey (KeyCode.Mouse0) && !endGame) {
-			transform.position = new Vector2 (transform.position.x, transform.position.y + verticalSpeed);
+			//transform.position = new Vector2 (transform.position.x, transform.position.y + verticalSpeed);
+			rigidbody2D.AddForce (new Vector2(0, 10));
 		} else {
-			transform.position = new Vector2 (transform.position.x, transform.position.y - verticalSpeed);
+			//transform.position = new Vector2 (transform.position.x, transform.position.y - verticalSpeed);
+			rigidbody2D.AddForce (new Vector2(0, -10));
 		}
 
 		if (gameObject.transform.position.x >= destination && !endGame) {
@@ -26,8 +28,8 @@ public class SubmarineControl : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter(Collision collision) {
-		if (collision.gameObject.tag == "Finish"){
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Finish"){
 			endGame = true;
 		}
 	}
