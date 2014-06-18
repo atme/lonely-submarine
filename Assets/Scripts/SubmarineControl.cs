@@ -16,7 +16,7 @@ public class SubmarineControl : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.Mouse0) && !endGame) {
 			//transform.position = new Vector2 (transform.position.x, transform.position.y + verticalSpeed);
-			rigidbody2D.AddForce (new Vector2(0, 10));
+			rigidbody2D.AddForce (new Vector2(0, 15));
 		} else {
 			//transform.position = new Vector2 (transform.position.x, transform.position.y - verticalSpeed);
 			rigidbody2D.AddForce (new Vector2(0, -10));
