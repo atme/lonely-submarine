@@ -6,12 +6,15 @@ public class Scene : MonoBehaviour {
 	private static int mineDistance = 11;
 	public GameObject sand;
 	public GameObject background;
+	public GameObject backgroundv2;
+	private bool spawn;
 
 	// Use this for initialization
 	void Start () {
 		InvokeRepeating("CreateMine", 0.1f, 2f);
 		InvokeRepeating("CreateSand", 0.9f, 1.37f);
 		InvokeRepeating("CreateBackground", 3f, 3f);
+		InvokeRepeating("CreateBackgroundv2", Random.Range (5f, 10f), Random.Range (5f, 10f));
 	}
 	
 	// Update is called once per frame
@@ -34,6 +37,13 @@ public class Scene : MonoBehaviour {
 
 	void CreateBackground() {
 		Instantiate(background, new Vector2 (35, 1), transform.rotation);
+	}
+
+	void CreateBackgroundv2(){
+		if (spawn == false) {
+			Instantiate (backgroundv2, new Vector2 (22f, 2.2f), transform.rotation);
+			spawn = true;
+		}
 	}
 
 	public static int GetMineDistance() {
