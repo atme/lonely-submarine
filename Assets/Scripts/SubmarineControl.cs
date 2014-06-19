@@ -2,9 +2,8 @@
 using System.Collections;
 
 public class SubmarineControl : MonoBehaviour {
-	private float verticalSpeed = 0.1f;
+	private float verticalSpeed = 13f;//0.1f;
 	public bool endGame = false;
-	private float destination = 30f;
 	private int score;
 
 	// Use this for initialization
@@ -16,15 +15,10 @@ public class SubmarineControl : MonoBehaviour {
 	void Update () {
 		if (Input.GetKey (KeyCode.Mouse0) && !endGame) {
 			//transform.position = new Vector2 (transform.position.x, transform.position.y + verticalSpeed);
-			rigidbody2D.AddForce (new Vector2(0, 13));
+			rigidbody2D.AddForce (new Vector2(0, verticalSpeed));
 		} else {
 			//transform.position = new Vector2 (transform.position.x, transform.position.y - verticalSpeed);
-			rigidbody2D.AddForce (new Vector2(0, -13));
-		}
-
-		if (gameObject.transform.position.x >= destination && !endGame) {
-			destination += Scene.GetMineDistance();
-			score++;
+			rigidbody2D.AddForce (new Vector2(0, -verticalSpeed));
 		}
 	}
 
@@ -52,5 +46,10 @@ public class SubmarineControl : MonoBehaviour {
 		if (GUI.Button(new Rect(10, 20, 100, 30), "Start Again?"))
 			Application.LoadLevel ("underwater"); 
 		
+	}
+
+	public void AddScore() {
+		if (!endGame)
+			score++;
 	}
 }

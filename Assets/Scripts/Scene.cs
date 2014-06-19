@@ -8,6 +8,7 @@ public class Scene : MonoBehaviour {
 	public GameObject background;
 	public GameObject backgroundv2;
 	private bool spawn;
+	private float bottomBorderOfUpperMine = 2f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,9 +24,9 @@ public class Scene : MonoBehaviour {
 	}
 
 	void CreateMine() {
-		float upMinePosition = Random.Range (4.0f, 2.0f);
-		Vector2 upPosition = new Vector2(transform.position.x + mineDistance, upMinePosition);
-		Vector2 downPosition = new Vector2(transform.position.x + mineDistance, upMinePosition - Random.Range (5, 1));
+		float upperMinePosition = Random.Range (4f, bottomBorderOfUpperMine);
+		Vector2 upPosition = new Vector2(transform.position.x + mineDistance, upperMinePosition);
+		Vector2 downPosition = new Vector2(transform.position.x + mineDistance, upperMinePosition - Random.Range (5f, 1f));
 
 		Instantiate(mine, upPosition, transform.rotation);
 		Instantiate(mine, downPosition, transform.rotation);
@@ -46,8 +47,8 @@ public class Scene : MonoBehaviour {
 		}
 	}
 
-	public static int GetMineDistance() {
-		return mineDistance;
+	public float GetBottomBorderOfUpperMine() {
+		return bottomBorderOfUpperMine;
 	}
 
 }
