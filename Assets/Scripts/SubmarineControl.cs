@@ -8,8 +8,6 @@ public class SubmarineControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		//if (PlayerPrefs.GetInt ("highscore1"))
-			Debug.Log (PlayerPrefs.GetInt("highscore1"));
 	}
 	
 	// Update is called once per frame
@@ -46,7 +44,7 @@ public class SubmarineControl : MonoBehaviour {
 			gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
 		}
 		GUI.Label(new Rect (Screen.width - 100,0,100,50), "<color='white'>Your score: " + score + "</color>");
-		GUI.Label(new Rect (20,0,100,50), "<color='white'>Last highscore: " + PlayerPrefs.GetInt("highscore") + "</color>");
+		GUI.Label(new Rect (20,0,100,50), "<color='white'>Highscore: " + PlayerPrefs.GetInt("highscore") + "</color>");
 	}
 
 	void RestartGame(int windowID) {
