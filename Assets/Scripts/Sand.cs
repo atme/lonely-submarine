@@ -4,8 +4,8 @@ using System.Collections;
 public class Sand : MonoBehaviour {
 
 	private GameObject mainCamera;
-	private int destroyDistance = -20;
-	public int speed = -15;
+	public int destroyDistance = -22;
+	public float speed = -15f;
 
 	// Use this for initialization
 	void Start () {

@@ -36,9 +36,11 @@ public class SubmarineControl : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		Rect windowRect = new Rect(200, 200, 120, 60);
-		if (endGame)
-			windowRect = GUI.Window(0, centerRectangle(windowRect), RestartGame, "Score:" + score);
+				Rect windowRect = new Rect (200, 200, 120, 60);
+				if (endGame) {
+						windowRect = GUI.Window (0, centerRectangle (windowRect), RestartGame, "Score:" + score);
+						gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
+				}
 		GUI.Label(new Rect (Screen.width - 100,0,100,50), "<color='black'>Your score: " + score + "</color>");
 	}
 

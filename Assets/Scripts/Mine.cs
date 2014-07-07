@@ -4,7 +4,7 @@ using System.Collections;
 public class Mine : MonoBehaviour {
 	private GameObject mainCamera;
 	private int destroyDistance = -15;
-	private float speed = 0.1f;
+	private float speed = 0.3f;
 	private SubmarineControl submarine;
 	private Scene scene;
 	private bool sailedSubmarine = false;
