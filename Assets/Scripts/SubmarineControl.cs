@@ -8,7 +8,8 @@ public class SubmarineControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		//if (PlayerPrefs.GetInt ("highscore1"))
+			Debug.Log (PlayerPrefs.GetInt("highscore1"));
 	}
 	
 	// Update is called once per frame
@@ -36,16 +37,22 @@ public class SubmarineControl : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-				Rect windowRect = new Rect (200, 200, 120, 60);
-				if (endGame) {
-						windowRect = GUI.Window (0, centerRectangle (windowRect), RestartGame, "Score:" + score);
-						gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
-				}
-		GUI.Label(new Rect (Screen.width - 100,0,100,50), "<color='black'>Your score: " + score + "</color>");
+		Rect windowRect = new Rect (200, 200, 120, 100);
+		if (endGame) {
+			if (PlayerPrefs.GetInt("highscore") < score)
+				PlayerPrefs.SetInt("highscore", score);
+
+			windowRect = GUI.Window (0, centerRectangle (windowRect), RestartGame, "Game Over");
+			gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
+		}
+		GUI.Label(new Rect (Screen.width - 100,0,100,50), "<color='white'>Your score: " + score + "</color>");
+		GUI.Label(new Rect (20,0,100,50), "<color='white'>Last highscore: " + PlayerPrefs.GetInt("highscore") + "</color>");
 	}
 
 	void RestartGame(int windowID) {
-		if (GUI.Button(new Rect(10, 20, 100, 30), "Start Again?"))
+		GUI.Label (new Rect (25, 20, 100, 30), "Score: " + score);
+		GUI.Label (new Rect (25, 40, 100, 30), "Highscore: " + PlayerPrefs.GetInt("highscore"));
+		if (GUI.Button(new Rect(10, 60, 100, 30), "Start Again?"))
 			Application.LoadLevel ("underwater"); 
 		
 	}
