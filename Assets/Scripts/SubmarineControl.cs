@@ -2,33 +2,28 @@
 using System.Collections;
 
 public class SubmarineControl : MonoBehaviour {
-	private int horizontalSpeed = 1;
-	private int verticalSpeedMax = 30;
-	private bool endGame = false;
-	private float destination = 30f;
+	private float verticalSpeed = 13f;//0.1f;
+	public bool endGame = false;
 	private int score;
 
 	// Use this for initialization
 	void Start () {
-		constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown (KeyCode.Mouse0) && !endGame)
-			constantForce.force = new Vector2(horizontalSpeed, verticalSpeedMax);
-		
-		if (Input.GetKeyUp (KeyCode.Mouse0))
-			constantForce.force = new Vector2(horizontalSpeed, -verticalSpeedMax);
-
-		if (gameObject.transform.position.x >= destination && endGame == false){
-			destination += Scene.GetMineDistance();
-			score++;
+		if (Input.GetKey (KeyCode.Mouse0) && !endGame) {
+			//transform.position = new Vector2 (transform.position.x, transform.position.y + verticalSpeed);
+			rigidbody2D.AddForce (new Vector2(0, verticalSpeed));
+		} else {
+			//transform.position = new Vector2 (transform.position.x, transform.position.y - verticalSpeed);
+			rigidbody2D.AddForce (new Vector2(0, -verticalSpeed));
 		}
 	}
 
-	void OnCollisionEnter(Collision collision) {
-		if (collision.gameObject.tag == "Finish"){
+	void OnCollisionEnter2D(Collision2D coll) {
+		if (coll.gameObject.tag == "Finish"){
 			endGame = true;
 		}
 	}
@@ -41,9 +36,11 @@ public class SubmarineControl : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		Rect windowRect = new Rect(200, 200, 120, 60);
-		if (endGame)
-			windowRect = GUI.Window(0, centerRectangle(windowRect), RestartGame, "Score:" + score);
+				Rect windowRect = new Rect (200, 200, 120, 60);
+				if (endGame) {
+						windowRect = GUI.Window (0, centerRectangle (windowRect), RestartGame, "Score:" + score);
+						gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
+				}
 		GUI.Label(new Rect (Screen.width - 100,0,100,50), "<color='black'>Your score: " + score + "</color>");
 	}
 
@@ -51,5 +48,10 @@ public class SubmarineControl : MonoBehaviour {
 		if (GUI.Button(new Rect(10, 20, 100, 30), "Start Again?"))
 			Application.LoadLevel ("underwater"); 
 		
+	}
+
+	public void AddScore() {
+		if (!endGame)
+			score++;
 	}
 }
