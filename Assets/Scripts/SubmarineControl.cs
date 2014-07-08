@@ -12,7 +12,7 @@ public class SubmarineControl : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey (KeyCode.Mouse0) && !endGame) {
+		if ((Input.GetKey (KeyCode.Mouse0) || Input.touchCount > 0) && !endGame) {
 			//transform.position = new Vector2 (transform.position.x, transform.position.y + verticalSpeed);
 			rigidbody2D.AddForce (new Vector2(0, verticalSpeed));
 		} else {
