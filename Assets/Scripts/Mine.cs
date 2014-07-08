@@ -25,7 +25,8 @@ public class Mine : MonoBehaviour {
 			sailedSubmarine = true;
 			submarine.AddScore();
 		}
-		
-		transform.position = new Vector2 (transform.position.x - speed, transform.position.y);
+
+		if (!submarine.isEndGame())
+			transform.position = new Vector2 (transform.position.x - speed, transform.position.y);
 	}
 }

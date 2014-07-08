@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SubmarineControl : MonoBehaviour {
 	private float verticalSpeed = 13f;//0.1f;
-	public bool endGame = false;
+	private bool endGame = false;
 	private int score;
 
 	// Use this for initialization
@@ -41,7 +41,7 @@ public class SubmarineControl : MonoBehaviour {
 				PlayerPrefs.SetInt("highscore", score);
 
 			windowRect = GUI.Window (0, centerRectangle (windowRect), RestartGame, "Game Over");
-			gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
+			//gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
 		}
 		GUI.Label(new Rect (Screen.width - 100,0,100,50), "<color='white'>Your score: " + score + "</color>");
 		GUI.Label(new Rect (20,0,100,50), "<color='white'>Highscore: " + PlayerPrefs.GetInt("highscore") + "</color>");
@@ -58,5 +58,9 @@ public class SubmarineControl : MonoBehaviour {
 	public void AddScore() {
 		if (!endGame)
 			score++;
+	}
+
+	public bool isEndGame() {
+		return endGame;
 	}
 }
