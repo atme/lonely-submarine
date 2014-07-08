@@ -5,6 +5,7 @@ public class SubmarineControl : MonoBehaviour {
 	private float verticalSpeed = 13f;//0.1f;
 	private bool endGame = false;
 	private int score;
+	public GameObject boom;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,11 @@ public class SubmarineControl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "Finish"){
 			endGame = true;
+			if(coll.gameObject.name == "minev5(Clone)"){
+				Instantiate(boom, new Vector2(coll.transform.position.x, coll.transform.position.y), transform.rotation);
+				Destroy(coll.gameObject);
+
+			}
 		}
 	}
 
@@ -49,7 +55,7 @@ public class SubmarineControl : MonoBehaviour {
 
 	void RestartGame(int windowID) {
 		GUI.Label (new Rect (25, 20, 100, 30), "Score: " + score);
-		GUI.Label (new Rect (25, 40, 100, 30), "Highscore: " + PlayerPrefs.GetInt("highscore"));
+		GUI.Label (new Rect (25, 40, 100, 30), "High score: " + PlayerPrefs.GetInt("highscore"));
 		if (GUI.Button(new Rect(10, 60, 100, 30), "Start Again?"))
 			Application.LoadLevel ("underwater"); 
 		
