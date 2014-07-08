@@ -5,11 +5,8 @@ public class SubmarineControl : MonoBehaviour {
 	private float verticalSpeed = 13f;//0.1f;
 	private bool endGame = false;
 	private int score;
-<<<<<<< HEAD
 	public GameObject boom;
-=======
 	private int textSize = (int)(Screen.height / 30);
->>>>>>> origin/master
 
 	// Use this for initialization
 	void Start () {
@@ -59,17 +56,10 @@ public class SubmarineControl : MonoBehaviour {
 	}
 
 	void RestartGame(int windowID) {
-<<<<<<< HEAD
-		GUI.Label (new Rect (25, 20, 100, 30), "Score: " + score);
-		GUI.Label (new Rect (25, 40, 100, 30), "High score: " + PlayerPrefs.GetInt("highscore"));
-		if (GUI.Button(new Rect(10, 60, 100, 30), "Start Again?"))
-=======
 		GUI.Label (new Rect (Screen.width / 15, Screen.height / 30, Screen.width / 2, 30), "<size="+textSize+">Score: " + score + "</size>");
 		GUI.Label (new Rect (Screen.width / 20, Screen.height / 15, Screen.width / 2, 30), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
 		if (GUI.Button(new Rect(Screen.width / 23, Screen.height / 9, Screen.width / 9, textSize * 2), "<size="+textSize+">Start Again?</size>"))
->>>>>>> origin/master
 			Application.LoadLevel ("underwater"); 
-		
 	}
 
 	public void AddScore() {
