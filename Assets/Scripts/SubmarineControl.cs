@@ -7,6 +7,10 @@ public class SubmarineControl : MonoBehaviour {
 	private int score;
 	public GameObject boom;
 	private int textSize = (int)(Screen.height / 30);
+	public GameObject boomsub;
+	private bool boomsubbool;
+	public GameObject pipe;
+	public GameObject boomsubex;
 
 	// Use this for initialization
 	void Start () {
@@ -27,6 +31,7 @@ public class SubmarineControl : MonoBehaviour {
 		if (coll.gameObject.tag == "Finish"){
 			endGame = true;
 			if(coll.gameObject.name == "minev5(Clone)"){
+				boomsubmarine();
 				Instantiate(boom, new Vector2(coll.transform.position.x, coll.transform.position.y), transform.rotation);
 				Destroy(coll.gameObject);
 
@@ -60,6 +65,17 @@ public class SubmarineControl : MonoBehaviour {
 		GUI.Label (new Rect (Screen.width / 20, Screen.height / 15, Screen.width / 2, 30), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
 		if (GUI.Button(new Rect(Screen.width / 23, Screen.height / 9, Screen.width / 9, textSize * 2), "<size="+textSize+">Start Again?</size>"))
 			Application.LoadLevel ("underwater"); 
+	}
+
+	void boomsubmarine(){
+		if (!boomsubbool) {
+				gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+				Instantiate (boomsub, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
+				Instantiate(boomsubex, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
+				gameObject.renderer.enabled = false;
+				pipe.renderer.enabled = false;
+				boomsubbool = true;
+		}
 	}
 
 	public void AddScore() {

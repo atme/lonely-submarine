@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SubmarineControl.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\boom.cs">
     <Files>
-      <File FileName="Assets\Scripts\SubmarineControl.cs" Line="8" Column="24" />
-      <File FileName="Assets\Scripts\SubmarineControl.cs" Line="41" Column="11" />
+      <File FileName="Assets\Scripts\boom.cs" Line="10" Column="37" />
+      <File FileName="Assets\Scripts\SubmarineControl.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
