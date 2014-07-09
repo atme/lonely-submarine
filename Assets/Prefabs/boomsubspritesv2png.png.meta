@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6a2285e4c18252499134db0863eeea7
+guid: 31a2530ce68bedc4f82c50bfe9b839a5
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -21,7 +21,7 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 2048
+  maxTextureSize: 1024
   textureSettings:
     filterMode: -1
     aniso: 1
@@ -42,143 +42,93 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: BOOMV3_0
+    - name: boomsubspritesv2png_0
       rect:
         serializedVersion: 2
-        x: 20
+        x: 0
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_1
+    - name: boomsubspritesv2png_1
       rect:
         serializedVersion: 2
-        x: 205
+        x: 233
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_2
+    - name: boomsubspritesv2png_2
       rect:
         serializedVersion: 2
-        x: 443
+        x: 465
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_3
+    - name: boomsubspritesv2png_3
       rect:
         serializedVersion: 2
-        x: 690
+        x: 700
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_4
+    - name: boomsubspritesv2png_4
       rect:
         serializedVersion: 2
-        x: 942
+        x: 951
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_5
+    - name: boomsubspritesv2png_5
       rect:
         serializedVersion: 2
-        x: 1196
+        x: 1225
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_6
+    - name: boomsubspritesv2png_6
       rect:
         serializedVersion: 2
-        x: 1454
+        x: 1519
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_7
+    - name: boomsubspritesv2png_7
       rect:
         serializedVersion: 2
-        x: 1716
+        x: 1792
         y: 0
         width: 256
         height: 256
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_8
+    - name: boomsubspritesv2png_8
       rect:
         serializedVersion: 2
-        x: 1995
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_9
-      rect:
-        serializedVersion: 2
-        x: 2292
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_10
-      rect:
-        serializedVersion: 2
-        x: 2569
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_11
-      rect:
-        serializedVersion: 2
-        x: 2874
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_12
-      rect:
-        serializedVersion: 2
-        x: 3167
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: .5, y: .5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: BOOMV3_13
-      rect:
-        serializedVersion: 2
-        x: 3444
-        y: 0
-        width: 256
-        height: 256
+        x: 1875
+        y: 90
+        width: 100
+        height: 101
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}

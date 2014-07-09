@@ -8,6 +8,8 @@ public class Mine : MonoBehaviour {
 	private SubmarineControl submarine;
 	private Scene scene;
 	private bool sailedSubmarine = false;
+		
+	private Rigidbody[] physicObject;// тут будут перечислены все физические объекты которые есть на сцене
 
 	// Use this for initialization
 	void Start () {
