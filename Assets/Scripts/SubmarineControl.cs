@@ -4,13 +4,16 @@ using System.Collections;
 public class SubmarineControl : MonoBehaviour {
 	private float verticalSpeed = 13f;//0.1f;
 	private bool endGame = false;
-	private int score;
+	private int score = 0;
 	public GameObject boom;
 	private int textSize = (int)(Screen.height / 30);
 	public GameObject boomsub;
 	private bool boomsubbool;
 	public GameObject pipe;
 	public GameObject boomsubex;
+	public GameObject restart;
+	public GameObject _score;
+	public GameObject highscore;
 
 	// Use this for initialization
 	void Start () {
@@ -28,14 +31,23 @@ public class SubmarineControl : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Finish"){
+		if (coll.gameObject.tag == "Finish" && endGame == false){
 			endGame = true;
 			if(coll.gameObject.name == "minev5(Clone)"){
 				boomsubmarine();
 				Instantiate(boom, new Vector2(coll.transform.position.x, coll.transform.position.y), transform.rotation);
 				Destroy(coll.gameObject);
-
 			}
+			_score.guiText.text = "Score: " + score;
+			if (PlayerPrefs.GetInt("highscore") < score) {
+				PlayerPrefs.SetInt("highscore", score);
+				highscore.guiText.text = "<b><color=brown>NEW!</color></b> Highscore: " + score;
+			} else {
+				highscore.guiText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
+			}
+			Instantiate(_score, new Vector2 (0.5f, 0.8f), transform.rotation);
+			Instantiate(highscore, new Vector2 (0.5f, 0.6f), transform.rotation);
+			Instantiate(restart, new Vector2 (0.5f, 0.5f), transform.rotation);
 		}
 	}
 
@@ -47,24 +59,8 @@ public class SubmarineControl : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		Rect windowRect = new Rect (200, 200, Screen.width / 5, Screen.height / 5);
-		if (endGame) {
-			if (PlayerPrefs.GetInt("highscore") < score)
-				PlayerPrefs.SetInt("highscore", score);
-
-			windowRect = GUI.Window (0, centerRectangle (windowRect), RestartGame, "<size="+textSize+">Game Over</size>");
-			//gameObject.rigidbody2D.AddForce (new Vector2 (-15, 0));
-		}
-
-		GUI.Label(new Rect (Screen.width - (Screen.width * .12f),0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Your score: " + score + "</size>");
+		GUI.Label(new Rect (Screen.width - (Screen.width * .15f),0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Your score: " + score + "</size>");
 		GUI.Label(new Rect (25, 0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
-	}
-
-	void RestartGame(int windowID) {
-		GUI.Label (new Rect (Screen.width / 15, Screen.height / 30, Screen.width / 2, 30), "<size="+textSize+">Score: " + score + "</size>");
-		GUI.Label (new Rect (Screen.width / 20, Screen.height / 15, Screen.width / 2, 30), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
-		if (GUI.Button(new Rect(Screen.width / 23, Screen.height / 9, Screen.width / 9, textSize * 2), "<size="+textSize+">Start Again?</size>"))
-			Application.LoadLevel ("underwater"); 
 	}
 
 	void boomsubmarine(){

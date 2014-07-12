@@ -45,7 +45,6 @@ public class Scene : MonoBehaviour {
 			if (skyReady && !submarine.isEndGame())
 				StartCoroutine(MakeSky());
 		}
-
 	}
 
 	void CreateMine() {
