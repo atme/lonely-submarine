@@ -6,7 +6,6 @@ public class Mine : MonoBehaviour {
 	private int destroyDistance = -15;
 	private float speed = 0.3f;
 	private SubmarineControl submarine;
-	private Scene scene;
 	private bool sailedSubmarine = false;
 		
 	private Rigidbody[] physicObject;// тут будут перечислены все физические объекты которые есть на сцене
@@ -15,7 +14,6 @@ public class Mine : MonoBehaviour {
 	void Start () {
 		mainCamera = GameObject.FindWithTag ("MainCamera");
 		submarine = GameObject.Find ("submarine_limbov3.5").GetComponent<SubmarineControl>();
-		scene = mainCamera.GetComponent<Scene>();
 	}
 	
 	// Update is called once per frame
@@ -23,7 +21,7 @@ public class Mine : MonoBehaviour {
 		if (transform.position.x - mainCamera.transform.position.x < destroyDistance)
 			Destroy (this.gameObject);
 
-		if (transform.position.x < -2 && transform.position.y < scene.GetBottomBorderOfUpperMine() && !sailedSubmarine) {
+		if (transform.position.x < -2 && !sailedSubmarine) {
 			sailedSubmarine = true;
 			submarine.AddScore();
 		}

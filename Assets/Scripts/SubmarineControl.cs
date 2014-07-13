@@ -38,10 +38,10 @@ public class SubmarineControl : MonoBehaviour {
 				Instantiate(boom, new Vector2(coll.transform.position.x, coll.transform.position.y), transform.rotation);
 				Destroy(coll.gameObject);
 			}
-			_score.guiText.text = "Score: " + score;
-			if (PlayerPrefs.GetInt("highscore") < score) {
-				PlayerPrefs.SetInt("highscore", score);
-				highscore.guiText.text = "<b><color=brown>NEW!</color></b> Highscore: " + score;
+			_score.guiText.text = "Score: " + getScore();
+			if (PlayerPrefs.GetInt("highscore") < getScore()) {
+				PlayerPrefs.SetInt("highscore", getScore());
+				highscore.guiText.text = "<b><color=brown>NEW!</color></b> Highscore: " + getScore();
 			} else {
 				highscore.guiText.text = "Highscore: " + PlayerPrefs.GetInt("highscore");
 			}
@@ -59,7 +59,7 @@ public class SubmarineControl : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		GUI.Label(new Rect (Screen.width - (Screen.width * .15f),0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Your score: " + score + "</size>");
+		GUI.Label(new Rect (Screen.width - (Screen.width * .15f),0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Your score: " + getScore() + "</size>");
 		GUI.Label(new Rect (25, 0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
 	}
 
@@ -82,4 +82,9 @@ public class SubmarineControl : MonoBehaviour {
 	public bool isEndGame() {
 		return endGame;
 	}
+
+	private int getScore() {
+		return score / 2;
+	}
+
 }
