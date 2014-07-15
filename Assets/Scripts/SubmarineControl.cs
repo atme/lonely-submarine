@@ -14,8 +14,8 @@ public class SubmarineControl : MonoBehaviour {
 	public GameObject restart;
 	public GameObject _score;
 	public GameObject highscore;
+	public AudioClip explosion;
 
-	// Use this for initialization
 	void Start () {
 	}
 	
@@ -34,6 +34,7 @@ public class SubmarineControl : MonoBehaviour {
 		if (coll.gameObject.tag == "Finish" && endGame == false){
 			endGame = true;
 			if(coll.gameObject.name == "minev5(Clone)"){
+				AudioSource.PlayClipAtPoint(explosion, transform.position);
 				boomsubmarine();
 				Instantiate(boom, new Vector2(coll.transform.position.x, coll.transform.position.y), transform.rotation);
 				Destroy(coll.gameObject);
