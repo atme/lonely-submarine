@@ -26,7 +26,9 @@ public class Scene : MonoBehaviour {
 		InvokeRepeating("CreateMine", 0.1f, 2f);
 		submarine = GameObject.Find ("submarine_limbov3.5").GetComponent<SubmarineControl>();
 	}
-	
+
+
+
 	// Update is called once per frame
 	void Update () {
 		{

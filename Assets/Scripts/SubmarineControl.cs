@@ -70,7 +70,6 @@ public class SubmarineControl : MonoBehaviour {
 				Instantiate (boomsub, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
 				Instantiate(boomsubex, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
 				gameObject.renderer.enabled = false;
-				//pipe.renderer.enabled = false;
 				boomsubbool = true;
 		}
 	}
