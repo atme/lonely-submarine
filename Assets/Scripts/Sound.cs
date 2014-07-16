@@ -8,12 +8,15 @@ public class Sound : MonoBehaviour {
 	public Texture2D soundOnTexture;
 	public Texture2D soundOffTexture;
 	private GameObject music;
+	private int iconSize = 64;
 
 	// Use this for initialization
 	void Start () {
 		music = GameObject.Find ("music");
 	    mute = PlayerPrefs.GetInt ("mute", 1) != 0;
 		setAudio ();
+		//gameObject.transform.position = new Vector2(Screen.width / 4, Screen.height/4);
+		guiTexture.pixelInset = new Rect (Screen.width - iconSize, 0, iconSize, iconSize);
 	}
 	
 	// Update is called once per frame

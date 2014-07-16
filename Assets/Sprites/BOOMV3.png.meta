@@ -1,6 +1,21 @@
 fileFormatVersion: 2
 guid: d6a2285e4c18252499134db0863eeea7
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: BOOMV3_0
+    21300002: BOOMV3_1
+    21300004: BOOMV3_2
+    21300006: BOOMV3_3
+    21300008: BOOMV3_4
+    21300010: BOOMV3_5
+    21300012: BOOMV3_6
+    21300014: BOOMV3_7
+    21300016: BOOMV3_8
+    21300018: BOOMV3_9
+    21300020: BOOMV3_10
+    21300022: BOOMV3_11
+    21300024: BOOMV3_12
+    21300026: BOOMV3_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

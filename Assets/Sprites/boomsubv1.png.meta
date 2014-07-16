@@ -1,6 +1,21 @@
 fileFormatVersion: 2
 guid: ecda7bb8bf06b8d4d8cf6f1deb38d85b
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: boomsubv1_0
+    21300002: boomsubv1_1
+    21300004: boomsubv1_2
+    21300006: boomsubv1_3
+    21300008: boomsubv1_4
+    21300010: boomsubv1_5
+    21300012: boomsubv1_6
+    21300014: boomsubv1_7
+    21300016: boomsubv1_8
+    21300018: boomsubv1_9
+    21300020: boomsubv1_10
+    21300022: boomsubv1_11
+    21300024: boomsubv1_12
+    21300026: boomsubv1_13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

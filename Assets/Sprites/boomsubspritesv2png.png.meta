@@ -1,6 +1,16 @@
 fileFormatVersion: 2
 guid: 31a2530ce68bedc4f82c50bfe9b839a5
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: boomsubspritesv2png_0
+    21300002: boomsubspritesv2png_1
+    21300004: boomsubspritesv2png_2
+    21300006: boomsubspritesv2png_3
+    21300008: boomsubspritesv2png_4
+    21300010: boomsubspritesv2png_5
+    21300012: boomsubspritesv2png_6
+    21300014: boomsubspritesv2png_7
+    21300016: boomsubspritesv2png_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
