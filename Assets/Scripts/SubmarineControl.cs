@@ -51,7 +51,7 @@ public class SubmarineControl : MonoBehaviour {
 			}
 			Instantiate(_score, new Vector2 (0.5f, 0.8f), transform.rotation);
 			Instantiate(highscore, new Vector2 (0.5f, 0.6f), transform.rotation);
-			Instantiate(restart, new Vector2 (0.5f, 0.5f), transform.rotation);
+			Instantiate(restart, new Vector2 (0.5f, 0.6f), transform.rotation);
 		}
 	}
 

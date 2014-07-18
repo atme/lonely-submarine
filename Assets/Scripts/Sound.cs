@@ -12,11 +12,10 @@ public class Sound : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		music = GameObject.Find ("music");
+		music = GameObject.Find ("music and AdMob");
 	    mute = PlayerPrefs.GetInt ("mute", 1) != 0;
-		setAudio ();
-		//gameObject.transform.position = new Vector2(Screen.width / 4, Screen.height/4);
 		guiTexture.pixelInset = new Rect (Screen.width - iconSize, 0, iconSize, iconSize);
+		setAudio ();
 	}
 	
 	// Update is called once per frame
