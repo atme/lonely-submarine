@@ -1,13 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Sound.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\king_of_rocks\Assets\Scripts\Tower.cs">
     <Files>
-      <File FileName="Assets\Scripts\Sound.cs" Line="11" Column="25" />
-      <File FileName="Assets\Scripts\Scene.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SubmarineControl.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Infinitimusic.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Restart.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Mine.cs" Line="1" Column="1" />
+      <File FileName="..\king_of_rocks\Assets\Scripts\Tower.cs" Line="18" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
