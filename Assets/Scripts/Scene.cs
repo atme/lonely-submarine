@@ -30,7 +30,7 @@ public class Scene : MonoBehaviour {
 
 
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
 		{
 			if (ready && !submarine.isEndGame())
 				StartCoroutine(MakeFloor());
