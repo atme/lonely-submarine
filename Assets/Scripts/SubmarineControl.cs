@@ -8,7 +8,7 @@ public class SubmarineControl : MonoBehaviour {
 	public GameObject boom;
 	private int textSize = (int)(Screen.height / 30);
 	public GameObject boomsub;
-	private bool boomsubbool;
+	//private bool boomsubbool;
 	public GameObject pipe;
 	public GameObject boomsubex;
 	public GameObject restart;
@@ -33,12 +33,12 @@ public class SubmarineControl : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll) {
-		if (coll.gameObject.tag == "Finish" && endGame == false){
+		if (coll.gameObject.tag == "Finish" && endGame == false) {
 			endGame = true;
-			if(coll.gameObject.name == "minev5(Clone)"){
+			if (coll.gameObject.name == "minev5(Clone)") {
 				if (!sound.isMute ())
 					AudioSource.PlayClipAtPoint(explosion, transform.position);
-				boomsubmarine();
+				ExplodeSubmarine();
 				Instantiate(boom, new Vector2(coll.transform.position.x, coll.transform.position.y), transform.rotation);
 				Destroy(coll.gameObject);
 			}
@@ -67,14 +67,14 @@ public class SubmarineControl : MonoBehaviour {
 		GUI.Label(new Rect (25, 0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
 	}
 
-	void boomsubmarine(){
-		if (!boomsubbool) {
-				gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
-				Instantiate (boomsub, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
-				Instantiate(boomsubex, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
-				gameObject.renderer.enabled = false;
-				boomsubbool = true;
-		}
+	void ExplodeSubmarine(){
+		//if (!boomsubbool) {
+			//gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
+			Instantiate (boomsub, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
+			Instantiate(boomsubex, new Vector2 (gameObject.transform.position.x, gameObject.transform.position.y), transform.rotation);
+			gameObject.renderer.enabled = false;
+			//boomsubbool = true;
+		//}
 	}
 
 	public void AddScore() {

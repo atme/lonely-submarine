@@ -7,8 +7,7 @@ public class Mine : MonoBehaviour {
 	private float speed = 0.3f;
 	private SubmarineControl submarine;
 	private bool sailedSubmarine = false;
-		
-	private Rigidbody[] physicObject;// тут будут перечислены все физические объекты которые есть на сцене
+	private int submarinePosition = -2;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +20,7 @@ public class Mine : MonoBehaviour {
 		if (transform.position.x - mainCamera.transform.position.x < destroyDistance)
 			Destroy (this.gameObject);
 
-		if (transform.position.x < -2 && !sailedSubmarine) {
+		if (transform.position.x < submarinePosition && !sailedSubmarine) {
 			sailedSubmarine = true;
 			submarine.AddScore();
 		}
