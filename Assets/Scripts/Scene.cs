@@ -22,7 +22,7 @@ public class Scene : MonoBehaviour {
 		Instantiate(sands[Random.Range(0,3)], new Vector2 (27.0f, -2.2f), transform.rotation);
 		Instantiate(backgrounds[Random.Range(0,3)], new Vector2 (6.7f, -1.7f), transform.rotation);
 		Instantiate(backgrounds[Random.Range(0,3)], new Vector2 (27.0f, -1.7f), transform.rotation);
-		Instantiate(sky, new Vector2 (9f, 4.98f), transform.rotation);
+		Instantiate(sky, new Vector2 (9f, 4.97f), transform.rotation);
 		InvokeRepeating("CreateMine", 0.1f, 2f);
 		submarine = GameObject.Find ("submarine_limbov3.5").GetComponent<SubmarineControl>();
 	}
@@ -92,7 +92,7 @@ public class Scene : MonoBehaviour {
 	private IEnumerator MakeSky() {
 		skyReady = false;
 		yield return new WaitForSeconds(39);
-		Instantiate(sky, new Vector2 (31.0f, 4.98f), transform.rotation);
+		Instantiate(sky, new Vector2 (31.0f, 4.97f), transform.rotation);
 		yield return new WaitForSeconds(150);
 		skyReady = true;
 	}
