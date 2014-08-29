@@ -3,13 +3,11 @@ using System.Collections;
 
 public class Scene : MonoBehaviour {
 	public GameObject mine;
-	private static int mineDistance = 11;
 	public GameObject[] sands;
 	public GameObject[] backgrounds;
 	public GameObject[] locations;
 	public GameObject sky;
 	private bool spawn;
-	private float bottomBorderOfUpperMine = 2f;
 	private bool ready = true;
 	private bool backgroundReady = true;
 	private bool locationReady = true;
@@ -18,16 +16,8 @@ public class Scene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Instantiate(sands[Random.Range(0,3)], new Vector2 (6.7f, -2.2f), transform.rotation);
-		Instantiate(sands[Random.Range(0,3)], new Vector2 (27.0f, -2.2f), transform.rotation);
-		Instantiate(backgrounds[Random.Range(0,3)], new Vector2 (6.7f, -1.7f), transform.rotation);
-		Instantiate(backgrounds[Random.Range(0,3)], new Vector2 (27.0f, -1.7f), transform.rotation);
-		Instantiate(sky, new Vector2 (9f, 4.97f), transform.rotation);
-		InvokeRepeating("CreateMine", 0.1f, 2f);
 		submarine = GameObject.Find ("submarine_limbov3.5").GetComponent<SubmarineControl>();
 	}
-
-
 
 	// Update is called once per frame
 	void Update() {
@@ -47,18 +37,6 @@ public class Scene : MonoBehaviour {
 			if (skyReady && !submarine.isEndGame())
 				StartCoroutine(MakeSky());
 		}
-	}
-
-	void CreateMine() {
-		if (submarine.isEndGame())
-			return;
-
-		float upperMinePosition = Random.Range (4f, bottomBorderOfUpperMine);
-		Vector2 upPosition = new Vector2(transform.position.x + mineDistance, upperMinePosition);
-		Vector2 downPosition = new Vector2(transform.position.x + mineDistance, upperMinePosition - Random.Range (5f, 1f));
-
-		Instantiate(mine, upPosition, transform.rotation);
-		Instantiate(mine, downPosition, transform.rotation);
 	}
 
 	private IEnumerator MakeFloor() {
@@ -91,14 +69,10 @@ public class Scene : MonoBehaviour {
 
 	private IEnumerator MakeSky() {
 		skyReady = false;
-		yield return new WaitForSeconds(39);
+		yield return new WaitForSeconds(29);
 		Instantiate(sky, new Vector2 (31.0f, 4.97f), transform.rotation);
 		yield return new WaitForSeconds(150);
 		skyReady = true;
-	}
-
-	public float GetBottomBorderOfUpperMine() {
-		return bottomBorderOfUpperMine;
 	}
 
 }

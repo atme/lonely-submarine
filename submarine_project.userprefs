@@ -1,12 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Scene.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SubmarineControl.cs">
     <Files>
-      <File FileName="Assets\Scripts\Scene.cs" Line="95" Column="44" />
       <File FileName="Assets\Scripts\Restart.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Sand.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Scene.cs" Line="105" Column="1" />
-      <File FileName="Assets\Scripts\SubmarineControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SubmarineControl.cs" Line="36" Column="58" />
+      <File FileName="Assets\Scripts\Mine.cs" Line="30" Column="1" />
+      <File FileName="Assets\Scripts\Scene.cs" Line="72" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

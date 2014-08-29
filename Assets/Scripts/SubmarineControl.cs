@@ -35,7 +35,7 @@ public class SubmarineControl : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll) {
 		if (coll.gameObject.tag == "Finish" && endGame == false) {
 			endGame = true;
-			if (coll.gameObject.name == "minev5(Clone)") {
+			if (coll.gameObject.name == "minev5") {
 				if (!sound.isMute ())
 					AudioSource.PlayClipAtPoint(explosion, transform.position);
 				ExplodeSubmarine();
