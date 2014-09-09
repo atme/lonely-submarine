@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 3ba354caac8d3074f8a79a25f5d71894
+guid: a9d50fcf3c6639840b95ca9ac1abccb5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: submarine_limbov8
+    21300000: interface
+    21300002: sound_off
+    21300004: sound_on
+    21300006: restart
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,8 +25,8 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -2
-  maxTextureSize: 1024
+  textureFormat: -3
+  maxTextureSize: 256
   textureSettings:
     filterMode: -1
     aniso: 1
@@ -32,7 +35,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -43,6 +46,36 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: sound_off
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 125
+        width: 234
+        height: 234
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: sound_on
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 125
+        width: 234
+        height: 234
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: restart
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 26
+        width: 361
+        height: 95
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

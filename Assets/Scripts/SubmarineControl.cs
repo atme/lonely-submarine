@@ -63,8 +63,8 @@ public class SubmarineControl : MonoBehaviour {
 	}
 	
 	void OnGUI() {
-		GUI.Label(new Rect (Screen.width - (Screen.width * .15f),0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Your score: " + getScore() + "</size>");
-		GUI.Label(new Rect (25, 0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
+		//GUI.Label(new Rect (Screen.width - (Screen.width * .15f),0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Your score: " + getScore() + "</size>");
+		//GUI.Label(new Rect (25, 0, Screen.width / 2, Screen.height / 10), "<size="+textSize+">Highscore: " + PlayerPrefs.GetInt("highscore") + "</size>");
 	}
 
 	void ExplodeSubmarine(){

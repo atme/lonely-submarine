@@ -16,32 +16,25 @@ public class Scene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		submarine = GameObject.Find ("submarine_limbov3.5").GetComponent<SubmarineControl>();
+		submarine = GameObject.Find ("submarine").GetComponent<SubmarineControl>();
 	}
 
 	// Update is called once per frame
-	void Update() {
-		{
+	void Update() { /*
 			if (ready && !submarine.isEndGame())
 				StartCoroutine(MakeFloor());
-		}
-		{
 			if (backgroundReady && !submarine.isEndGame())
-				StartCoroutine(MakeBackground());
-		}
-		{
+				//StartCoroutine(MakeBackground());
 			if (locationReady && !submarine.isEndGame())
-				StartCoroutine(MakeLocation());
-		}
-		{
+				//StartCoroutine(MakeLocation());
 			if (skyReady && !submarine.isEndGame())
-				StartCoroutine(MakeSky());
-		}
+				//StartCoroutine(MakeSky());
+				*/
 	}
 
 	private IEnumerator MakeFloor() {
 		ready = false;
-		Instantiate(sands[Random.Range(0,3)], new Vector2 (47.0f, -2.2f), transform.rotation);
+//		Instantiate(sands[Random.Range(0,3)], new Vector2 (47.0f, -2.2f), transform.rotation);
 		yield return new WaitForSeconds(1.3f);
 		ready = true;
 	}

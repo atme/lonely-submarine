@@ -11,7 +11,7 @@ public class Sand : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		mainCamera = GameObject.FindWithTag ("MainCamera");
-		submarine = GameObject.Find ("submarine_limbov3.5").GetComponent<SubmarineControl>();
+		submarine = GameObject.Find ("submarine").GetComponent<SubmarineControl>();
 	}
 	
 	// Update is called once per frame
