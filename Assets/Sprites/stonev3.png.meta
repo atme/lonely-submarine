@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: ec0ae80d6130ae44a9456b6c7e2d1fed
+guid: 3a93f42f449774040ab1e6126b5d5905
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: stonev3
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -22,7 +21,7 @@ TextureImporter:
   grayScaleToAlpha: 0
   generateCubemap: 0
   seamlessCubemap: 0
-  textureFormat: -1
+  textureFormat: -2
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
