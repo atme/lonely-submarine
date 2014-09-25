@@ -4,8 +4,9 @@ using System.Collections;
 public class Sand : MonoBehaviour {
 
 	private GameObject mainCamera;
-	public int destroyDistance = -22;
+	public int destroyDistance = -40;
 	public float speed = -15f;
+	public float positiony = -2.194483f;
 	private SubmarineControl submarine;
 
 	// Use this for initialization
@@ -19,7 +20,7 @@ public class Sand : MonoBehaviour {
 		if (!submarine.isEndGame())
 			transform.Translate(new Vector2 (speed * Time.deltaTime, 0));
 		if (transform.position.x - mainCamera.transform.position.x < destroyDistance) {
-			Destroy(this.gameObject);
+			transform.position = new Vector2(47.0f,positiony);
 		}
 	}
 }
