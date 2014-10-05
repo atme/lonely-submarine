@@ -21,8 +21,7 @@ public class Sound : MonoBehaviour {
 	}
 	
 	private void OnMouseDown() {
-		toggleSound(); 
-		Debug.Log ("atata");
+		toggleSound();
 	}
 	
 	private void onTouchStart() {

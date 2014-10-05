@@ -14,7 +14,7 @@ public class Explosion : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (name == "BOOMV3_0(Clone)")
+		if (name == "BOOMV3_0")
 			gameObject.GetComponent<CircleCollider2D>().radius += explosionPerFrame;
 	}
 }
