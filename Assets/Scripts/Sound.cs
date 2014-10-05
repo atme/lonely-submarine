@@ -5,18 +5,16 @@ using System;
 public class Sound : MonoBehaviour {
 
 	private bool mute = true;
-	public Sprite soundOn;
-	public Sprite soundOff;
+	public Texture soundOn;
+	public Texture soundOff;
 	private GameObject music;
 	private int iconSize = 64;
-	private SpriteRenderer spriteRenderer;
 
 	// Use this for initialization
 	void Start () {
-		spriteRenderer = gameObject.GetComponent<SpriteRenderer>();;
 		music = GameObject.Find ("music and AdMob");
 	    mute = PlayerPrefs.GetInt ("mute", 1) != 0;
-		//guiTexture.pixelInset = new Rect (Screen.width - iconSize, 0, iconSize, iconSize);
+		guiTexture.pixelInset = new Rect (Screen.width - iconSize, 0, iconSize, iconSize);
 		setAudio ();
 	}
 	
@@ -35,7 +33,7 @@ public class Sound : MonoBehaviour {
 	}
 
 	private void setAudio() {
-		spriteRenderer.sprite = mute ? soundOff : soundOn;
+		guiTexture.texture = mute ? soundOff : soundOn;
 		music.audio.volume = Convert.ToInt32(!mute);
 	}
 
