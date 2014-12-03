@@ -1,9 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Documents\GitHub\king_of_rocks_project\Assets\Scripts\Tower.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\AdMob.cs">
     <Files>
-      <File FileName="..\..\..\..\Documents\GitHub\king_of_rocks_project\Assets\Scripts\Ammo.cs" Line="27" Column="16" />
-      <File FileName="..\..\..\..\Documents\GitHub\king_of_rocks_project\Assets\Scripts\Tower.cs" Line="9" Column="38" />
+      <File FileName="Assets\Scripts\AdMob.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Sound.cs" Line="35" Column="27" />
+      <File FileName="Assets\Scripts\Restart.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Sand.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SubmarineControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Mine.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

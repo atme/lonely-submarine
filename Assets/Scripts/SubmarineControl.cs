@@ -38,7 +38,7 @@ public class SubmarineControl : MonoBehaviour {
 			if (coll.gameObject.name == "minev5") {
 				if (!sound.isMute ())
 					AudioSource.PlayClipAtPoint(explosion, transform.position);
-				//ExplodeSubmarine();
+				ExplodeSubmarine();
 				boom.transform.position = new Vector2(coll.transform.position.x, coll.transform.position.y);
 				boom.SetActive(true);
 				Destroy(coll.gameObject);
